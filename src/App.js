@@ -1,9 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './containers/home'
 
 function App() {
+
   return (
-    <div></div>
+    <>
+      <Home />
+    </>
   );
 }
 
