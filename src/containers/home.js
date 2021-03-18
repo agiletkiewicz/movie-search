@@ -42,7 +42,7 @@ function Home() {
       ))
   }
 
-  const showConfirmation = () => {
+  const modalDisplay = () => {
       setConfirm(prevState => !prevState);
   }
 
@@ -62,10 +62,8 @@ function Home() {
             <Welcome />
             <Search getMovies={getMovies} />
             <Movies movies={movies} addSelection={addSelection} deleteSelection={deleteSelection} />
-            {console.log("selection: " + selection)}
-            {console.log("cart: " + cart)}
-            <Footer show={selection.length > 0} showConfirmation={showConfirmation}/>
-            <Confirm show={confirm} selection={selection} showConfirmation={showConfirmation} addToCart={addToCart} />
+            <Footer show={selection.length > 0} modalDisplay={modalDisplay}/>
+            <Confirm show={confirm} selection={selection} modalDisplay={modalDisplay} addToCart={addToCart} />
         </div>
     </>
   );    

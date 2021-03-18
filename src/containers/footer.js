@@ -1,14 +1,15 @@
 import CartButton from '../components/cartButton'
 
-function Footer({ show, showConfirmation }) {
+function Footer({ show, modalDisplay }) {
     
     if (show) return (
       <footer className="footer">
-          <CartButton showConfirmation={showConfirmation}/>
+          <CartButton modalDisplay={modalDisplay}/>
       </footer>
     );
 
     return null;
+    
   }
   
   export default Footer;

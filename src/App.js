@@ -5,9 +5,7 @@ import Home from './containers/home'
 function App() {
 
   return (
-    <>
       <Home />
-    </>
   );
 }
 

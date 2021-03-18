@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button';
 
-function CartButton({ showConfirmation }) {
+function CartButton({ modalDisplay }) {
     return (
-        <Button variant="success" onClick={showConfirmation}>Add to Cart</Button>
+        <Button variant="success" onClick={modalDisplay}>Add to Cart</Button>
     );
   }
   
