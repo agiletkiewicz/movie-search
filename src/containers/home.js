@@ -6,6 +6,8 @@ import Confirm from '../components/confirm';
 import Movies from './movies';
 import Footer from './footer'
 import NavBar from '../components/navbar';
+import Welcome from '../components/welcome';
+
 
 function Home() {
 
@@ -49,6 +51,7 @@ function Home() {
           [...prevState].concat([...selection])
       ));
       setSelection([]);
+      setMovies([]);
       showConfirmation();
   }
 
@@ -56,6 +59,7 @@ function Home() {
     <>
         <NavBar cart={cart} />  
         <div className="container">
+            <Welcome />
             <Search getMovies={getMovies} />
             <Movies movies={movies} addSelection={addSelection} deleteSelection={deleteSelection} />
             {console.log("selection: " + selection)}

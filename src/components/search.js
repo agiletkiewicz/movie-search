@@ -19,17 +19,18 @@ function Search({ getMovies }) {
     };
 
     return (
-        <Container fluid>
-            <Form inline onSubmit={handleSubmit}>
-                <Form.Row className="align-items-center">
+        <Container>
+            <Form inline onSubmit={handleSubmit} className="justify-content-md-center">
+                <Form.Row inline className="align-items-center">
                     <Col xs="auto">
-                        <Form.Control type="text" onChange={handleChange} value={input}/>
+                        <Form.Control type="text" onChange={handleChange} value={input} className="mr-sm-2"/>
                     </Col>
                     <Col xs="auto">
                         <Button type="submit" variant="primary" >Search</Button>
                     </Col>
                 </Form.Row>
             </Form>
+            <br/>
         </Container>
     );
   }

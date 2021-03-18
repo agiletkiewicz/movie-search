@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 
 function CartButton({ showConfirmation }) {
     return (

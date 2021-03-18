@@ -8,9 +8,9 @@
 }
 
 .container {
+  padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 10%;
 }
 
 .footer {
@@ -23,6 +23,11 @@
   border-style: solid;
   border-width: thin;
   background-color: white;
+}
+
+.heading {
+  text-align: center;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
