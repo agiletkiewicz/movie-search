@@ -1,11 +1,14 @@
-import Search from '../components/search';
+
 import { useState } from 'react';
 import axios from 'axios';
+import Search from '../components/search';
+import Movies from './movies';
 
 function Home() {
 
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("");
+  const [cart, setCart] = useState([]);
+  const [selection, setSelection] = useState([])
   
   const API = "https://www.omdbapi.com/"
 
@@ -16,19 +19,29 @@ function Home() {
             s: search.split(" ").join("+")
         }
     })
-    // .then(resp => resp.json())
     .then(resp => setMovies(resp.data.Search))
   }
 
-  const searchInput = (search) => {
-    getMovies(search);
-}
+  const addSelection = (movie) => {
+    setSelection(prevState => (
+        [...prevState, movie]
+    ));
+  }
+
+  const deleteSelection = (movieId) => {
+      setSelection(prevState => (
+          [...prevState].filter(movie => (
+              movie.imdbID !== movieId
+          ))
+      ))
+  }
 
   return (
-    <>
-      <Search searchInput={searchInput} />
-      {console.log(movies)}
-    </>
+    <div className="container">
+      <Search getMovies={getMovies} />
+      <Movies movies={movies} addSelection={addSelection} deleteSelection={deleteSelection} />
+      {console.log(selection)}
+    </div>
   );    
 }
 
