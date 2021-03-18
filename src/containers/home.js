@@ -3,6 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Search from '../components/search';
 import Movies from './movies';
+import Footer from './footer'
 
 function Home() {
 
@@ -41,6 +42,7 @@ function Home() {
       <Search getMovies={getMovies} />
       <Movies movies={movies} addSelection={addSelection} deleteSelection={deleteSelection} />
       {console.log(selection)}
+      <Footer show={selection.length > 0}/>
     </div>
   );    
 }
