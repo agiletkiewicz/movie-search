@@ -1,12 +1,23 @@
 import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
 
-function Movie({movie}) {
+function Movie({ movie, addSelection, deleteSelection }) {
 
   const [clicked, setClicked] = useState(false);
 
+  const handleClick = () => {
+    if (clicked) {
+      setClicked(false);
+      deleteSelection(movie.imdbID);
+    } else {
+      setClicked(true);
+      addSelection(movie);
+    }
+
+  }
+
   return (
-    <Card onClick={() => setClicked(!clicked)} className={clicked ? "border-success" : null}>
+    <Card onClick={handleClick} className={clicked ? "border-success" : null}>
       {movie.Poster === "N/A" ? null : <Card.Img src={movie.Poster} />}
       <Card.Body>
         <Card.Title>{movie.Title}</Card.Title>

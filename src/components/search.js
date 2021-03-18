@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 
-function Search({ searchInput }) {
+function Search({ getMovies }) {
 
     const [input, setInput] = useState("")
 
@@ -14,7 +14,7 @@ function Search({ searchInput }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        searchInput(input);
+        getMovies(input);
         setInput("");
     };
 
