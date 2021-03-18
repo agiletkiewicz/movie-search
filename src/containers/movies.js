@@ -1,6 +1,13 @@
-function Movies() {
+import Movie from '../components/movie';
+import CardDeck from 'react-bootstrap/CardDeck'
+
+function Movies({ movies }) {
     return (
-      <div></div>
+      <CardDeck>
+        {movies.map(movie => (
+          <Movie key={movie.imdbID} movie={movie} />
+        ))}
+      </CardDeck>
     );
   }
   

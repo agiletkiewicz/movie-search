@@ -1,6 +1,8 @@
-import Search from '../components/search';
+
 import { useState } from 'react';
 import axios from 'axios';
+import Search from '../components/search';
+import Movies from './movies';
 
 function Home() {
 
@@ -25,10 +27,10 @@ function Home() {
 }
 
   return (
-    <>
+    <div className="container">
       <Search searchInput={searchInput} />
-      {console.log(movies)}
-    </>
+      <Movies movies={movies} />
+    </div>
   );    
 }
 
