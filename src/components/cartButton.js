@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button'
 
-function CartButton() {
+function CartButton({ showConfirmation }) {
     return (
-        <Button variant="success">Add to Cart</Button>
+        <Button variant="success" onClick={showConfirmation}>Add to Cart</Button>
     );
   }
   

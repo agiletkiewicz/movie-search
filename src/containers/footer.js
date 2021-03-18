@@ -1,10 +1,10 @@
 import CartButton from '../components/cartButton'
 
-function Footer({ show }) {
+function Footer({ show, showConfirmation }) {
     
     if (show) return (
       <footer className="footer">
-          <CartButton />
+          <CartButton showConfirmation={showConfirmation}/>
       </footer>
     );
 
