@@ -1,15 +1,27 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
+import { useState } from 'react';
 
-function Search({ setSearch }) {
+function Search({ searchInput }) {
 
-    function handleClick() {
-        setSearch("test")
+    const [input, setInput] = useState("")
+
+    const handleChange = (event) => {
+        setInput(event.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        searchInput(input);
+        setInput("");
     };
 
     return (
-        <Button variant="primary" onClick={handleClick} >Search</Button>
+        <form onSubmit={handleSubmit}>
+            <input type="text" onChange={handleChange} value={input}/>
+            <input type="submit" value="search"/>
+        </form>
     );
   }
   

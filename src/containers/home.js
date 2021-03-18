@@ -1,16 +1,21 @@
-import Search from '../components/search'
+import Search from '../components/search';
 import { useState } from 'react';
 
 function Home() {
 
-  const [search, setSearch] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState("")  
+
+  const searchInput = (search) => {
+      setMovies(search);
+  }
 
   return (
     <>
-      <Search setSearch={setSearch} />
-      {console.log(search)}
+      <Search searchInput={searchInput} />
+      {console.log(movies)}
     </>
-  );
+  );    
 }
 
 export default Home;
