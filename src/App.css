@@ -8,9 +8,26 @@
 }
 
 .container {
+  padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 10%;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-style: solid;
+  border-width: thin;
+  background-color: white;
+}
+
+.heading {
+  text-align: center;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

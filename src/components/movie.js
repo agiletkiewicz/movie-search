@@ -17,13 +17,14 @@ function Movie({ movie, addSelection, deleteSelection }) {
   }
 
   return (
-    <Card onClick={handleClick} className={clicked ? "border-success" : null}>
-      {movie.Poster === "N/A" ? null : <Card.Img src={movie.Poster} />}
+    <Card onClick={handleClick} className={clicked ? "border-success" : null} style={{ width: '18rem' }}>
       <Card.Body>
+        <input type="checkbox" checked={clicked ? "checked" : ""} />
         <Card.Title>{movie.Title}</Card.Title>
         <Card.Text>
           {movie.Year}
         </Card.Text>
+        {movie.Poster === "N/A" ? null : <Card.Img src={movie.Poster} />}
       </Card.Body>
     </Card>
   );
