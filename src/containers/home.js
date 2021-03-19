@@ -58,7 +58,7 @@ function Home() {
     <>
         <NavBar cart={cart} />  
         <div className="container">
-            <Welcome />
+            <Welcome empty={cart.length < 1} />
             <Search getMovies={getMovies} />
             <Movies movies={movies} addSelection={addSelection} deleteSelection={deleteSelection} />
             <Footer show={selection.length > 0} modalDisplay={modalDisplay}/>
