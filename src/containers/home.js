@@ -1,12 +1,11 @@
-
 import { useState } from 'react';
 import axios from 'axios';
 import Search from '../components/search';
 import Confirm from '../components/confirm';
-import Movies from './movies';
-import Footer from './footer'
 import NavBar from '../components/navbar';
 import Welcome from '../components/welcome';
+import Movies from './movies';
+import Footer from './footer'
 
 
 function Home() {
@@ -52,7 +51,7 @@ function Home() {
       ));
       setSelection([]);
       setMovies([]);
-      showConfirmation();
+      modalDisplay();
   }
 
   return (
